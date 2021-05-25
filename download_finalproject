@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue May 25 11:19:35 2021
+
+@author: futur
+"""
+
+from github import Github
+import os
+
+#Grab Protocol from Github and Export to Protocol.py on Desktop
+github = Github('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')
+user = github.get_user()
+print(user)
+repository = user.get_repo('finalproject')
+file_content = repository.get_contents("finalproject")
+protocol = file_content.decoded_content.decode()
+if os.path.exists("C:\\Users\\futur\Desktop\Protocol.py"):
+  os.remove("C:\\Users\\futur\Desktop\Protocol.py")
+else:
+  print("The file does not exist")
+file = open("C:\\Users\\futur\Desktop\Protocol.py", "a+")
+file.write(protocol)
+file.close()

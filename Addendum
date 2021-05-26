@@ -3,3 +3,5 @@ Automate.bat #Set of commands to run using Windows Task Scheduler
 CD\
 py .\downloadprotocol.py
 py C:\Users\futur\Desktop\Protocol.py
+
+#Automate.bat an downloadprotocol.py both located at C:\

@@ -9,14 +9,14 @@ from github import Github
 import os
 
 #Grab Protocol from Github and Export to Protocol.py on Desktop
-github = Github('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')
+github = Github('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')
 user = github.get_user()
 print(user)
 repository = user.get_repo('finalproject')
 file_content = repository.get_contents("finalproject")
 protocol = file_content.decoded_content.decode()
-if os.path.exists("C:\\Users\\futur\Desktop\Protocol.py"):
-  os.remove("C:\\Users\\futur\Desktop\Protocol.py")
+if os.path.exists("C:\\Protocol.py"):
+  os.remove("C:\\Protocol.py")
 else:
   print("The file does not exist")
 file = open("C:\\Users\\futur\Desktop\Protocol.py", "a+")

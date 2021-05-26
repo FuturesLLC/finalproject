@@ -1,8 +1,5 @@
+Automate.bat #Set of commands to run using Windows Task Scheduler
+
 CD\
-CD C:\Users\futur\Desktop\Protocol
-Remove-Item C:\Protocol.py
-$url = "https://raw.githubusercontent.com/NousPublications/finalproject/main/Final%20project%20for%20Mrs.%20Shelby's%20coding%20class.py"
-$output = "C:\Protocol.py"
-Invoke-WebRequest -Uri $url -Outfile $output
-CD\
-.\Protocol.py
+py .\downloadprotocol.py
+py C:\Users\futur\Desktop\Protocol.py

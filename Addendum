@@ -8,5 +8,3 @@ powershell -command "[Net.ServicePointManager]::SecurityProtocol = 'tls12, tls11
 timeout 5
 CD C:\Users\futur\Desktop\
 py .\Protocol.py
-
-#Automate.bat an downloadprotocol.py both located at C:\

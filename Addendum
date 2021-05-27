@@ -4,7 +4,7 @@ CD\
 CD C:\Users\futur\Desktop
 del Protocol.py
 CD\
-powershell -command "[Net.ServicePointManager]::SecurityProtocol = 'tls12, tls11, tls'; invoke-webrequest -Uri 'https://raw.githubusercontent.com/NousPublications/finalproject/main/finalproject' -OutFile 'C:\\Users\futur\Desktop\Protocol.py'"
+powershell -command "[Net.ServicePointManager]::SecurityProtocol = 'tls12, tls11, tls'; invoke-webrequest -Uri 'https://raw.githubusercontent.com/NousPublications/finalproject/main/finalproject' -OutFile 'C:\Users\futur\Desktop\Protocol.py'"
 CD C:\Users\futur\Desktop\
 py .\Protocol.py
 

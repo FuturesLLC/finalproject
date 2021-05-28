@@ -8,3 +8,41 @@ powershell -command "[Net.ServicePointManager]::SecurityProtocol = 'tls12, tls11
 timeout 5
 CD C:\Users\futur\Desktop\
 py .\Protocol.py
+
+Scraping() for Protocol
+
+import subprocess
+from github import Github
+import os
+#Grab Current Proxy from Host and Export to TempProxy.txt
+if os.path.exists("C:\\Users\\futur\Desktop\TempProxy.txt"):
+  os.remove("C:\\Users\\futur\Desktop\TempProxy.txt")
+else:
+  print("The file does not exist")
+subprocess.call("powershell New-Item -Path C:\\Users\\futur\Desktop -Name TempProxy.txt -Value (Get-ItemProperty -Path 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -Name ProxyServer).ProxyServer")
+e = open("C:\\Users\\futur\Desktop\TempProxy.txt")
+proxy_new = e.read()
+#Grab Proxy Master List from Github and Export to ProxyMaster.txt
+github = Github('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')
+user = github.get_user()
+print(user)
+repository = user.get_repo('finalproject')
+content = repository.get_contents('Addendum List')
+print(content)
+proxy_list = content.decoded_content.decode()
+if os.path.exists("C:\\Users\\futur\Desktop\ProxyMaster.txt"):
+  os.remove("C:\\Users\\futur\Desktop\ProxyMaster.txt")
+else:
+  print("The file does not exist")
+file = open("C:\\Users\\futur\Desktop\ProxyMaster.txt", "a+")
+file.write(proxy_list)
+#Write Current Proxy to ProxyMaster.txt and Close Files
+file.write(proxy_new)
+print(proxy_new)
+e.close()
+file.close()
+file = open("C:\\Users\\futur\Desktop\ProxyMaster.txt", "r")
+new_proxy_list = file.read()
+#Upload Revised Proxy Master List to Github and Close File
+repository.update_file(content.path, "Addendum List", new_proxy_list, content.sha)
+file.close()

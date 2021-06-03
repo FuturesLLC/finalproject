@@ -1,0 +1,10 @@
+Automate.bat #Set of commands to run using Windows Task Scheduler
+
+CD\
+CD C:\Users\futur\Desktop
+del Protocol.py
+CD\
+powershell -command "[Net.ServicePointManager]::SecurityProtocol = 'tls12, tls11, tls'; invoke-webrequest -Uri 'https://raw.githubusercontent.com/NousPublications/finalproject/main/finalproject' -OutFile 'C:\Users\futur\Desktop\Protocol.py'"
+timeout 5
+CD C:\Users\futur\Desktop\
+py .\Protocol.py

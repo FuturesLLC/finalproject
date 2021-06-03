@@ -1,0 +1,146 @@
+import subprocess
+from github import Github
+import os
+import time
+import pyautogui
+import webbrowser
+import subprocess
+
+def proxyscrape():
+    #Get Access Token from Pastebin
+    if os.path.exists("C:\\Users\\futur\Desktop\token.txt"):
+      os.remove("C:\\Users\\futur\Desktop\token.txt")
+    else:
+      print("The file does not exist")
+    subprocess.call("powershell Invoke-WebRequest -Uri 'https://pastebin.com/raw/Mng8ki50' -Outfile 'C:\\Users\\futur\\Desktop\\token.txt'")
+    time.sleep(2)
+    token_file = open("C:\\Users\\futur\\Desktop\\token.txt", "r")
+    token = token_file.read()
+    print(token)
+    token_file.close()
+
+    #Grab Current Proxy from Host and Export to TempProxy.txt
+    if os.path.exists("C:\\Users\\futur\Desktop\TempProxy.txt"):
+      os.remove("C:\\Users\\futur\Desktop\TempProxy.txt")
+    else:
+      print("The file does not exist")
+    subprocess.call("powershell New-Item -Path C:\\Users\\futur\Desktop -Name TempProxy.txt -Value (Get-ItemProperty -Path 'Registry::HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -Name ProxyServer).ProxyServer")
+    new_proxy_file = open("C:\\Users\\futur\Desktop\TempProxy.txt")
+    new_proxy = new_proxy_file.read()
+    new_proxy = new_proxy + "\n"
+    print(new_proxy)
+
+    #Grab Proxy from Online List (One) and Export
+    if os.path.exists("C:\\Users\\futur\Downloads\http_proxies.txt"):
+      os.remove("C:\\Users\\futur\Downloads\http_proxies.txt")
+    else:
+      print("The file does not exist")
+    webbrowser.open_new('https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout=10000&country=all&ssl=all&anonymity=all')
+    time.sleep(5)
+    pyautogui.keyDown('alt')
+    pyautogui.press('f4')
+    pyautogui.keyUp('alt')
+    imported_proxies_file_one = open("C:\\Users\\futur\Downloads\http_proxies.txt")
+    imported_proxies_one = imported_proxies_file_one.read()
+
+    #Grab Proxy from Online List (Two) and Export
+    if os.path.exists("C:\\Users\\futur\Downloads\socks4_proxies.txt"):
+      os.remove("C:\\Users\\futur\Downloads\socks4_proxies.txt")
+    else:
+      print("The file does not exist")
+    webbrowser.open_new('https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks4&timeout=10000&country=all')
+    time.sleep(5)
+    pyautogui.keyDown('alt')
+    pyautogui.press('f4')
+    pyautogui.keyUp('alt')
+    imported_proxies_file_two = open("C:\\Users\\futur\Downloads\socks4_proxies.txt")
+    imported_proxies_two = imported_proxies_file_two.read()
+
+    #Grab Proxy from Online List (Three) and Export
+    if os.path.exists("C:\\Users\\futur\Downloads\socks5_proxies.txt"):
+      os.remove("C:\\Users\\futur\Downloads\socks5_proxies.txt")
+    else:
+      print("The file does not exist")
+    webbrowser.open_new('https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks5&timeout=10000&country=all')
+    time.sleep(5)
+    pyautogui.keyDown('alt')
+    pyautogui.press('f4')
+    pyautogui.keyUp('alt')
+    imported_proxies_file_three = open("C:\\Users\\futur\Downloads\socks5_proxies.txt")
+    imported_proxies_three = imported_proxies_file_three.read()
+
+    #Grab Proxy from Online List (Four) and Export
+    if os.path.exists("C:\\Users\\futur\Downloads\proxylist.txt"):
+      os.remove("C:\\Users\\futur\Downloads\proxylist.txt")
+    else:
+      print("The file does not exist")
+    webbrowser.open_new('https://proxied.network/download.php?file=proxylist.txt')
+    time.sleep(5)
+    pyautogui.keyDown('alt')
+    pyautogui.press('f4')
+    pyautogui.keyUp('alt')
+    imported_proxies_file_four = open("C:\\Users\\futur\Downloads\proxylist.txt")
+    imported_proxies_four = imported_proxies_file_four.read()
+
+    #Collate Proxies and Close Files
+    imported_proxies = imported_proxies_one + imported_proxies_two + imported_proxies_three + imported_proxies_four
+    imported_proxies_file_one.close()
+    imported_proxies_file_two.close()
+    imported_proxies_file_three.close()
+    imported_proxies_file_four.close()
+
+    #Export Collated Proxy List to File
+    if os.path.exists("C:\\Users\\futur\Desktop\collated_proxies.txt"):
+      os.remove("C:\\Users\\futur\Desktop\collated_proxies.txt")
+    else:
+      print("The file does not exist")
+    collated_proxies = open("C:\\Users\\futur\Desktop\collated_proxies.txt", "a+")
+    collated_proxies.write(imported_proxies)
+    collated_proxies.close()
+
+    #Grab Proxy Master List from Github and Export to ProxyMaster.txt
+    github = Github(token)
+    user = github.get_user()
+    repository = user.get_repo('finalproject')
+    content = repository.get_contents('address_list')
+    old_proxy_list = content.decoded_content.decode()
+    nl = "\n"
+    proxy_total = old_proxy_list + imported_proxies
+    print(proxy_total)
+    unsorted_proxies = []
+    sorted_proxies = []
+    if os.path.exists("C:\\Users\\futur\Desktop\ProxyMaster.txt"):
+      os.remove("C:\\Users\\futur\Desktop\ProxyMaster.txt")
+    else:
+      print("The file does not exist")
+    old_proxy_file = open("C:\\Users\\futur\Desktop\ProxyMaster.txt", "a+")
+    old_proxy_file.write(proxy_total)
+    old_proxy_file.seek(0)
+    for line in old_proxy_file.readlines():
+        unsorted_proxies.append(line)
+    print(unsorted_proxies)
+    for address in unsorted_proxies:
+        if not address in sorted_proxies:
+            sorted_proxies.append(address)
+    print(sorted_proxies)
+    for address in sorted_proxies:
+        if not "\n" in address:
+            sorted_proxies.remove(address)
+    print(sorted_proxies)
+    new_master_proxy = ""
+    for address in sorted_proxies:
+        new_master_proxy += address 
+    print(new_master_proxy)
+
+    #Update Github File for Comprehensive
+    repository.update_file(content.path, "Update", new_master_proxy, content.sha)
+
+    #Update Github File for Current
+    current_content = repository.get_contents('current_address_list')
+    repository.update_file(current_content.path, "Update", imported_proxies, current_content.sha)
+
+    #Close Files
+    new_proxy_file.close()
+    old_proxy_file.close()
+
+proxyscrape()

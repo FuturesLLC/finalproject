@@ -14,49 +14,33 @@ import pyperclip
 import pyautogui
  
 def generation_selector():
-    generation_index = random.randint(0, 4)
+    generation_index = random.randint(0, 2)
  
-    site_generations = [["loansandlaw.site", "mortgagehub.site"], 
-                        ["insurancelab.site", "premiumlifeinsurance.xyz"], 
-                        ["cryptocoinzforyou.xyz", "cryptoinformation.xyz"], 
-                        ["findattorneyonretainer.xyz", "feministstudies.xyz"], 
-                        ["howtoearnyourdegree.xyz", "artdealnearyou.xyz"]]
+    site_generations = [["newlifeinchrist.xyz", "christiantheodicy.xyz"], 
+                        ["prayerservicesforyou.xyz", "historyhub.xyz"], 
+                        ["archaeologystudies.xyz", "anthropologyfindings.xyz"]]
  
-    social_entrance_one = ["https://lawandsociety.livejournal.com/342.html", 
-                           "https://medium.com/law-and-society", 
+    social_entrance_one = ["https://newlifechrist.livejournal.com/263.html", 
+                           "https://newlifeinchrist-xyz.medium.com/about", 
                            "https://twitter.com/lawandsociety3", 
-                           "https://lawandsociety1.blogspot.com/2021/03/blog-post.html", 
-                           "https://www.quora.com/q/technologyandculture"]
+                           "https://lawandsociety1.blogspot.com/2021/06/alpha-generation.html", 
+                           "https://newlifeinchrist.quora.com/"]
  
-    social_entrance_two = ["https://insurancelab.livejournal.com/258.html", 
-                           "https://medium.com/insurance-lab", 
+    social_entrance_two = ["https://prayerservices.livejournal.com/377.html", 
+                           "https://prayerservicesforyou-xyz.medium.com/about", 
                            "https://twitter.com/InsuranceLab1", 
-                           "https://lawandsociety1.blogspot.com/2021/05/blog-post.html", 
-                           "https://insurancelab.quora.com/"]
+                           "https://lawandsociety1.blogspot.com/2021/06/beta-generation.html", 
+                           "https://prayerservicesforyou.quora.com/"]
  
-    social_entrance_three = ["https://cryptocoinz.livejournal.com/368.html", 
-                           "https://medium.com/crypto-coins-for-you", 
+    social_entrance_three = ["https://anthropologyxyz.livejournal.com/383.html", 
+                           "https://archaeologystudies-xyz.medium.com/about", 
                            "https://twitter.com/CoinzYou", 
-                           "https://lawandsociety1.blogspot.com/2021/05/blog-post_6.html", 
-                           "https://cryptocoinzforyou.quora.com/"]
- 
-    social_entrance_four = ["https://find-attorney.livejournal.com/372.html", 
-                           "https://medium.com/find-attorney-on-retainer", 
-                           "https://twitter.com/AttorneyOn", 
-                           "https://lawandsociety1.blogspot.com/2021/05/blog-post_78.html", 
-                           "https://findattorneyonretainer.quora.com/"]
- 
-    social_entrance_five = ["https://earndegree.livejournal.com/498.html", 
-                           "https://medium.com/how-to-earn-your-degree", 
-                           "https://twitter.com/DegreeEarn", 
-                           "https://lawandsociety1.blogspot.com/2021/05/blog-post_12.html", 
-                           "https://howtoearnyourdegree.quora.com/"]
+                           "https://lawandsociety1.blogspot.com/2021/06/gamma-generation.html", 
+                           "https://archaeologystudies.quora.com/"]
  
     social_build = [social_entrance_one, 
                     social_entrance_two, 
-                    social_entrance_three, 
-                    social_entrance_four, 
-                    social_entrance_five]
+                    social_entrance_three]
  
     target_generation = site_generations[generation_index]
  
@@ -1077,7 +1061,7 @@ def propertyentry():
     site_checkfile.write(site_address)
     site_checkfile.close()
     with open("Site_Check.txt", "r") as rd:
-        if not 'loansandlaw' in rd.read():
+        if not generation_list[1] in rd.read():
             pyautogui.tripleClick(300, 50)
             #time.sleep(1)
             pyautogui.press('backspace')
@@ -1098,7 +1082,7 @@ def propertyentry():
     site_checkfile.write(site_address)
     site_checkfile.close()
     with open("Site_Check.txt", "r") as rd:
-        if not 'mortgagehub' in rd.read():
+        if not generation_list[2] in rd.read():
             pyautogui.tripleClick(300, 50)
             #time.sleep(1)
             pyautogui.press('backspace')
@@ -1121,7 +1105,7 @@ def propertyentry():
     site_checkfile.write(site_address)
     site_checkfile.close()
     with open("Site_Check.txt", "r") as rd:
-        if not 'loansandlaw' in rd.read():
+        if not generation_list[1] in rd.read():
             pyautogui.tripleClick(300, 50)
             #time.sleep(1)
             pyautogui.press('backspace')
@@ -1142,7 +1126,7 @@ def propertyentry():
     site_checkfile.write(site_address)
     site_checkfile.close()
     with open("Site_Check.txt", "r") as rd:
-        if not 'mortgagehub' in rd.read():
+        if not generation_list[2] in rd.read():
             pyautogui.tripleClick(300, 50)
             #time.sleep(1)
             pyautogui.press('backspace')
@@ -1165,7 +1149,7 @@ def propertyentry():
     site_checkfile.write(site_address)
     site_checkfile.close()
     with open("Site_Check.txt", "r") as rd:
-        if not 'loansandlaw' in rd.read():
+        if not generation_list[1] in rd.read():
             pyautogui.tripleClick(300, 50)
             #time.sleep(1)
             pyautogui.press('backspace')
@@ -1186,7 +1170,7 @@ def propertyentry():
     site_checkfile.write(site_address)
     site_checkfile.close()
     with open("Site_Check.txt", "r") as rd:
-        if not 'mortgagehub' in rd.read():
+        if not generation_list[2] in rd.read():
             pyautogui.tripleClick(300, 50)
             #time.sleep(1)
             pyautogui.press('backspace')
@@ -1212,7 +1196,7 @@ def propertyentry():
     site_checkfile.write(site_address)
     site_checkfile.close()
     with open("Site_Check.txt", "r") as rd:
-        if not 'loansandlaw' in rd.read():
+        if not generation_list[1] in rd.read():
             pyautogui.tripleClick(300, 50)
             #time.sleep(1)
             pyautogui.press('backspace')
@@ -1233,7 +1217,7 @@ def propertyentry():
     site_checkfile.write(site_address)
     site_checkfile.close()
     with open("Site_Check.txt", "r") as rd:
-        if not 'mortgagehub' in rd.read():
+        if not generation_list[2] in rd.read():
             pyautogui.tripleClick(300, 50)
             #time.sleep(1)
             pyautogui.press('backspace')
@@ -1256,7 +1240,7 @@ def propertyentry():
     site_checkfile.write(site_address)
     site_checkfile.close()
     with open("Site_Check.txt", "r") as rd:
-        if not 'loansandlaw' in rd.read():
+        if not generation_list[1] in rd.read():
             pyautogui.tripleClick(300, 50)
             #time.sleep(1)
             pyautogui.press('backspace')
@@ -1277,7 +1261,7 @@ def propertyentry():
     site_checkfile.write(site_address)
     site_checkfile.close()
     with open("Site_Check.txt", "r") as rd:
-        if not 'mortgagehub' in rd.read():
+        if not generation_list[2] in rd.read():
             pyautogui.tripleClick(300, 50)
             #time.sleep(1)
             pyautogui.press('backspace')
@@ -1300,7 +1284,7 @@ def propertyentry():
     site_checkfile.write(site_address)
     site_checkfile.close()
     with open("Site_Check.txt", "r") as rd:
-        if not 'loansandlaw' in rd.read():
+        if not generation_list[1] in rd.read():
             pyautogui.tripleClick(300, 50)
             #time.sleep(1)
             pyautogui.press('backspace')
@@ -1321,7 +1305,7 @@ def propertyentry():
     site_checkfile.write(site_address)
     site_checkfile.close()
     with open("Site_Check.txt", "r") as rd:
-        if not 'mortgagehub' in rd.read():
+        if not generation_list[2] in rd.read():
             pyautogui.tripleClick(300, 50)
             #time.sleep(1)
             pyautogui.press('backspace')
@@ -2164,7 +2148,7 @@ generation_selector()
 generation_list = generation_selector()
 social_list = generation_list[0]
 generation_index = generation_list[3]
-if generation_index == 1:
+if generation_index == 99:
     proxy_manager()
 else:
     tuxlerconfig()

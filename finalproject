@@ -857,7 +857,7 @@ def socialentrance():
         pyautogui.keyUp('ctrl')
         time.sleep(1)
         pyautogui.keyDown('ctrl')
-        pyautogui.click(1000, 725)
+        pyautogui.click(700, 815)
         pyautogui.keyUp('ctrl')
         time.sleep(1)
  
@@ -867,11 +867,11 @@ def socialentrance():
         pyautogui.click(1910, 1000)
         time.sleep(1)
         pyautogui.keyDown('ctrl')
-        pyautogui.click(950, 530)
+        pyautogui.click(750, 300)
         pyautogui.keyUp('ctrl')
         time.sleep(1)
         pyautogui.keyDown('ctrl')
-        pyautogui.click(950, 810)
+        pyautogui.click(750, 350)
         pyautogui.keyUp('ctrl')
         time.sleep(1)
  
@@ -889,11 +889,11 @@ def socialentrance():
     #Blogger
     if social_random == 3:
         pyautogui.keyDown('ctrl')
-        pyautogui.click(730, 270)
+        pyautogui.click(730, 300)
         pyautogui.keyUp('ctrl')
         time.sleep(1)
         pyautogui.keyDown('ctrl')
-        pyautogui.click(730, 310)
+        pyautogui.click(730, 335)
         pyautogui.keyUp('ctrl')
         time.sleep(1)
  
@@ -926,7 +926,7 @@ def socialentrance():
         pyautogui.keyUp('ctrl')
         time.sleep(1)
         pyautogui.keyDown('ctrl')
-        pyautogui.click(1000, 725)
+        pyautogui.click(700, 815)
         pyautogui.keyUp('ctrl')
         time.sleep(1)
  
@@ -936,11 +936,11 @@ def socialentrance():
         pyautogui.click(1910, 1000)
         time.sleep(1)
         pyautogui.keyDown('ctrl')
-        pyautogui.click(950, 530)
+        pyautogui.click(750, 300)
         pyautogui.keyUp('ctrl')
         time.sleep(1)
         pyautogui.keyDown('ctrl')
-        pyautogui.click(950, 810)
+        pyautogui.click(750, 330)
         pyautogui.keyUp('ctrl')
         time.sleep(1)
  
@@ -958,11 +958,11 @@ def socialentrance():
     #Blogger
     if social_random == 3:
         pyautogui.keyDown('ctrl')
-        pyautogui.click(730, 270)
+        pyautogui.click(730, 300)
         pyautogui.keyUp('ctrl')
         time.sleep(1)
         pyautogui.keyDown('ctrl')
-        pyautogui.click(730, 310)
+        pyautogui.click(730, 335)
         pyautogui.keyUp('ctrl')
         time.sleep(1)
  
@@ -995,7 +995,7 @@ def socialentrance():
         pyautogui.keyUp('ctrl')
         time.sleep(1)
         pyautogui.keyDown('ctrl')
-        pyautogui.click(1000, 725)
+        pyautogui.click(700, 815)
         pyautogui.keyUp('ctrl')
         time.sleep(1)
  
@@ -1005,11 +1005,11 @@ def socialentrance():
         pyautogui.click(1910, 1000)
         time.sleep(1)
         pyautogui.keyDown('ctrl')
-        pyautogui.click(950, 530)
+        pyautogui.click(750, 300)
         pyautogui.keyUp('ctrl')
         time.sleep(1)
         pyautogui.keyDown('ctrl')
-        pyautogui.click(950, 810)
+        pyautogui.click(750, 330)
         pyautogui.keyUp('ctrl')
         time.sleep(1)
  
@@ -1027,11 +1027,11 @@ def socialentrance():
     #Blogger
     if social_random == 3:
         pyautogui.keyDown('ctrl')
-        pyautogui.click(730, 270)
+        pyautogui.click(730, 300)
         pyautogui.keyUp('ctrl')
         time.sleep(1)
         pyautogui.keyDown('ctrl')
-        pyautogui.click(730, 310)
+        pyautogui.click(730, 335)
         pyautogui.keyUp('ctrl')
         time.sleep(1)
  

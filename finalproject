@@ -14,11 +14,12 @@ import pyperclip
 import pyautogui
  
 def generation_selector():
-    generation_index = random.randint(0, 2)
+    generation_index = random.randint(0, 3)
  
     site_generations = [["newlifeinchrist.xyz", "christiantheodicy.xyz"], 
                         ["prayerservicesforyou.xyz", "historyhub.xyz"], 
-                        ["archaeologystudies.xyz", "anthropologyfindings.xyz"]]
+                        ["archaeologystudies.xyz", "anthropologyfindings.xyz"],
+                        ["realestatestudies.xyz", "theinsurancespot.xyz"]]
  
     social_entrance_one = ["https://newlifechrist.livejournal.com/263.html", 
                            "https://newlifeinchrist-xyz.medium.com/about", 
@@ -37,10 +38,17 @@ def generation_selector():
                            "https://twitter.com/CoinzYou", 
                            "https://lawandsociety1.blogspot.com/2021/06/gamma-generation.html", 
                            "https://archaeologystudies.quora.com/"]
+    
+    social_entrance_four = ["https://realestatestudi.livejournal.com/497.html", 
+                           "https://edwardroutledge.medium.com/about", 
+                           "https://twitter.com/AttorneyOn", 
+                           "https://lawandsociety1.blogspot.com/2021/06/delta-generation.html", 
+                           "https://realestatestudies.quora.com/"]
  
     social_build = [social_entrance_one, 
                     social_entrance_two, 
-                    social_entrance_three]
+                    social_entrance_three,
+                    social_entrance_four]
  
     target_generation = site_generations[generation_index]
  

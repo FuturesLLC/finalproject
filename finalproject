@@ -16,16 +16,16 @@ import pyautogui
 def generation_selector():
     generation_index = random.randint(0, 3)
  
-    site_generations = [["newlifeinchrist.xyz", "christiantheodicy.xyz"], 
+    site_generations = [["realestatecentral.xyz", "insurancebundles.xyz"], 
                         ["prayerservicesforyou.xyz", "historyhub.xyz"], 
                         ["archaeologystudies.xyz", "anthropologyfindings.xyz"],
                         ["realestatestudies.xyz", "theinsurancespot.xyz"]]
  
-    social_entrance_one = ["https://newlifechrist.livejournal.com/263.html", 
-                           "https://newlifeinchrist-xyz.medium.com/about", 
-                           "https://twitter.com/lawandsociety3", 
-                           "https://lawandsociety1.blogspot.com/2021/06/alpha-generation.html", 
-                           "https://newlifeinchrist.quora.com/"]
+    social_entrance_one = ["https://abigailnormal.livejournal.com/309.html", 
+                           "https://abigailnormal.medium.com/about", 
+                           "https://twitter.com/DegreeEarn", 
+                           "https://lawandsociety1.blogspot.com/2021/06/epsilon-generation.html", 
+                           "https://realestatecentral.quora.com/"]
  
     social_entrance_two = ["https://prayerservices.livejournal.com/377.html", 
                            "https://prayerservicesforyou-xyz.medium.com/about", 

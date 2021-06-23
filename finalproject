@@ -438,7 +438,7 @@ def tuxlerconfig():
     if 1 <= controlvariableone <= 10:
         #USA
         if 1 <= controlvariabletwo <= 120:
-            ycoordinate = 875
+            ycoordinate = 895
         #New Zealand
         if 121 <= controlvariabletwo <= 122:
             ycoordinate = 885
@@ -462,7 +462,7 @@ def tuxlerconfig():
             ycoordinate = 850
         #United Kingdon
         if 135 <= controlvariabletwo <= 136:
-            ycoordinate = 840
+            ycoordinate = 875
  
         #Austria
         if 137 <= controlvariabletwo <= 138:

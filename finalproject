@@ -12,6 +12,8 @@ import requests
 import os.path
 import pyperclip
 import pyautogui
+import re
+import json
  
 def generation_selector():
     generation_index = random.randint(0, 4)

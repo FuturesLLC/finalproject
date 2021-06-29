@@ -2204,7 +2204,7 @@ def proxy_close():
     os.system("TASKKILL /F /IM EPS.exe")
     os.system("powershell set-itemproperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -name ProxyEnable -value 0")
 
-proxy_manager():
+def proxy_manager():
     delete_old()
     build_recent_proxies()
     get_proxies()

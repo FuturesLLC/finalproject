@@ -14,41 +14,49 @@ import pyperclip
 import pyautogui
  
 def generation_selector():
-    generation_index = random.randint(0, 3)
+    generation_index = random.randint(0, 4)
  
-    site_generations = [["realestatecentral.xyz", "insurancebundles.xyz"], 
-                        ["prayerservicesforyou.xyz", "historyhub.xyz"], 
-                        ["archaeologystudies.xyz", "anthropologyfindings.xyz"],
-                        ["realestatestudies.xyz", "theinsurancespot.xyz"]]
+    site_generations = [["lawphilosophy.xyz", "insurancelegalanalysis.xyz"], 
+                        ["ethicsoflaw.xyz", "constitutionallawscholar.xyz"], 
+                        ["buyahouse.xyz", "insuranceninjas.xyz"],
+                        ["realestateinsurance.xyz", "mastersofrealestate.xyz"],
+                        ["newlifeinchrist.xyz", "christiantheodicy.xyz"]]
  
-    social_entrance_one = ["https://abigailnormal.livejournal.com/309.html", 
-                           "https://abigailnormal.medium.com/about", 
-                           "https://twitter.com/DegreeEarn", 
-                           "https://lawandsociety1.blogspot.com/2021/06/epsilon-generation.html", 
-                           "https://realestatecentral.quora.com/"]
- 
-    social_entrance_two = ["https://prayerservices.livejournal.com/377.html", 
-                           "https://prayerservicesforyou-xyz.medium.com/about", 
+    social_entrance_one = ["https://lawphilosophy.livejournal.com/375.html", 
+                           "https://stevecollins-17870.medium.com/about", 
                            "https://twitter.com/InsuranceLab1", 
-                           "https://lawandsociety1.blogspot.com/2021/06/beta-generation.html", 
-                           "https://prayerservicesforyou.quora.com/"]
+                           "https://lawandsociety1.blogspot.com/2021/06/alpha-generation_28.html", 
+                           "https://lawphilosophy.quora.com/"]
  
-    social_entrance_three = ["https://anthropologyxyz.livejournal.com/383.html", 
-                           "https://archaeologystudies-xyz.medium.com/about", 
+    social_entrance_two = ["https://ethicsoflaw.livejournal.com/327.html", 
+                           "https://amyharris-15470.medium.com/about", 
                            "https://twitter.com/CoinzYou", 
-                           "https://lawandsociety1.blogspot.com/2021/06/gamma-generation.html", 
-                           "https://archaeologystudies.quora.com/"]
+                           "https://lawandsociety1.blogspot.com/2021/06/beta-generation_28.html", 
+                           "https://ethicsoflaw.quora.com/"]
+ 
+    social_entrance_three = ["https://buyahousenow.livejournal.com/331.html", 
+                           "https://nicolasbrennen.medium.com/about", 
+                           "https://twitter.com/AttorneyOn", 
+                           "https://lawandsociety1.blogspot.com/2021/06/gamma-generation_28.html", 
+                           "https://buyahouse1.quora.com/"]
     
     social_entrance_four = ["https://realestatestudi.livejournal.com/497.html", 
-                           "https://edwardroutledge.medium.com/about", 
-                           "https://twitter.com/AttorneyOn", 
-                           "https://lawandsociety1.blogspot.com/2021/06/delta-generation.html", 
-                           "https://realestatestudies.quora.com/"]
+                           "https://newlifeinchrist-xyz.medium.com/about", 
+                           "https://twitter.com/lawandsociety3", 
+                           "https://lawandsociety1.blogspot.com/2021/06/zero-generation.html", 
+                           "https://newlifeinchrist.quora.com/"]
+                           
+    social_entrance_five = ["https://masterealestate.livejournal.com/446.html", 
+                           "https://gracepotter-46051.medium.com/about", 
+                           "https://twitter.com/RelEstateMaster", 
+                           "https://lawandsociety1.blogspot.com/2021/06/delta-generation_28.html", 
+                           "https://realestateinsurance.quora.com/"]
  
     social_build = [social_entrance_one, 
                     social_entrance_two, 
                     social_entrance_three,
-                    social_entrance_four]
+                    social_entrance_four, 
+                    social_entrance_five]
  
     target_generation = site_generations[generation_index]
  
@@ -122,35 +130,106 @@ def correctproperty(property):
         x = x + 1
  
 def delete_old():
-    if os.path.exists('C:\\Users\\futur\\ip_subset.txt'):
-        os.remove('C:\\Users\\futur\\ip_subset.txt')
-    if os.path.exists('C:\\Users\\futur\\master_ip_download.txt'):
-        os.remove('C:\\Users\\futur\\master_ip_download.txt')
+    command_two = "powershell Set-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings' -name ProxyEnable -Value 0"
+    os.system(command_two)
  
-def get_proxy():
-    #Retrieve and sort IP lists
-    url = 'https://www.pastebin.com/raw/QewReu5C'
-    request = requests.get(url, allow_redirects=True)
-    open('master_ip_download.txt', 'wb').write(request.content)
-    file = open('master_ip_download.txt')
-    ip_list = file.readlines()
-    subset = open("ip_subset.txt", 'a+')
-    x = 0
-    while x < 300:
-        rand = random.randint(1, 1100)
-        subset.write(ip_list[rand])
-        x = x + 1
-    subset.close()
-    request.close()
-    file.close()
+    if os.path.exists('C:\\Users\\Aaron\\Desktop\\recent_proxies.txt'):
+        os.remove('C:\\Users\\Aaron\\Desktop\\recent_proxies.txt')          
+    if os.path.exists('C:\\Users\\Aaron\\Desktop\\test_image.jpg'):
+        os.remove('C:\\Users\\Aaron\\Desktop\\test_image.jpg')
+    if os.path.exists('C:\\Users\\Aaron\\Desktop\\master_ip_download.txt'):
+        os.remove('C:\\Users\\Aaron\\Desktop\\master_ip_download.txt')
+    if os.path.exists('C:\\Users\\Aaron\\Desktop\\ip_subset.txt'):
+        os.remove('C:\\Users\\Aaron\\Desktop\\ip_subset.txt')
+        
+def build_recent_proxies():
+    unsorted_proxy_list = []
+    partially_sorted_proxy_list = []
+    sorted_proxy_list = []      
+
+    master_proxy_file = open("C:\\Users\\Aaron\Desktop\master_ip_download.txt", "a+")
+
+    request_url = 'https://proxylist.live/dashboard/proxylist?page=0'
+    response = requests.get(request_url)
+    downloaded_proxies = response.content.decode()
+    master_proxy_file.write(downloaded_proxies)
+
+    request_url = 'https://proxylist.live/dashboard/proxylist?page=1'
+    response = requests.get(request_url)
+    downloaded_proxies = response.content.decode()
+    master_proxy_file.write(downloaded_proxies)
+
+    request_url = 'https://proxylist.live/dashboard/proxylist?page=2'
+    response = requests.get(request_url)
+    downloaded_proxies = response.content.decode()
+    master_proxy_file.write(downloaded_proxies)
+
+    request_url = 'https://free-proxy-list.net/'
+    response = requests.get(request_url)
+    downloaded_proxies = response.content.decode()
+    master_proxy_file.write(downloaded_proxies)
+    
+    request_url = 'https://us-proxy.org/'
+    response = requests.get(request_url)
+    downloaded_proxies = response.content.decode()
+    master_proxy_file.write(downloaded_proxies)
+
+    master_proxy_file.close()
+
+    with open('C:\\Users\\Aaron\\Desktop\\master_ip_download.txt') as fh:
+       fstring = fh.readlines()
  
+    pattern = re.compile(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\:\d{1,5})')
+  
+    for line in fstring:
+       unsorted_proxy_list.append(pattern.search(line))
+   
+    partially_sorted_proxy_list = list(filter(None, unsorted_proxy_list))
+
+    for element in partially_sorted_proxy_list:
+        #print(element)
+        cast_string = str(element)
+        #print(cast_string)
+        finished_cast_string = cast_string.split("'")[1]
+        #print(finished_cast_string)
+        sorted_proxy_list.append(finished_cast_string)
+    
+    sorted_proxies_file = open("C:\\Users\\Aaron\\Desktop\\recent_proxies.txt", "a+")
+    for element in sorted_proxy_list:
+        sorted_proxies_file.write(element + "\n")
+    sorted_proxies_file.close()
+
+    print(sorted_proxy_list)
+    print(len(sorted_proxy_list))
+    
+def get_proxies():
+    recent_proxies_file = open("C:\\Users\\Aaron\\Desktop\\recent_proxies.txt", "a+")
+    recent_proxies_file.seek(0)
+    proxies = recent_proxies_file.readlines()
+    subset_proxy_file = open("C:\\Users\\Aaron\\Desktop\\ip_subset.txt", "a+")
+
+    for i in range(1,200):
+        recent_proxies_file.seek(0)
+        i = random.randint(0, 559)
+        subset_proxy_file.write(proxies[i])
+        i = i + 1
+   
+    recent_proxies_file.close()
+    subset_proxy_file.close()
+
+def proxy_switch(ip_with_port):
+    command_one = "powershell Set-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings' -name ProxyServer -Value " + ip_with_port
+    command_two = "powershell Set-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings' -name ProxyEnable -Value 1"
+    os.system(command_one)
+    os.system(command_two)
+
 def proxy_check_routine():
     headers = {}
     headers['User-Agent'] = "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:48.0) Gecko/20100101 Firefox/48.0"
  
     try: 
-        url = 'https://lawandsociety.site/wp-content/uploads/2021/03/Law-and-Society.jpg'
-        request = requests.get(url, allow_redirects=True, timeout=3)
+        url = 'https://prayerservicesforyou.xyz/wp-content/uploads/2021/06/prayerserviceforyou.jpg'
+        request = requests.get(url, allow_redirects=True, timeout=4)
         open('test_image.jpg', 'wb').write(request.content)
         request.close()
         print('Attempt successful.')
@@ -158,77 +237,49 @@ def proxy_check_routine():
     except:
         print('Attempt failed.')
         return False
-    if os.path.exists('C:\\Users\\futur\\test_image.jpg'):
-        os.remove('C:\\Users\\futur\\test_image.jpg')
- 
-def proxy_engage():
-    pyautogui.click(370, 1060)
-    time.sleep(3)
-    pyautogui.keyDown('win')
-    pyautogui.press('up')
-    pyautogui.keyUp('win')
-    time.sleep(1)
-    pyautogui.press('alt')
-    time.sleep(1)
-    pyautogui.press('e')
-    time.sleep(1)
-    pyautogui.press('s')
-    time.sleep(1)
-    pyautogui.press('delete')
-    time.sleep(1)
-    pyautogui.press('alt')
-    time.sleep(1)
-    pyautogui.press('f')
-    time.sleep(1)
-    pyautogui.press('l')
-    time.sleep(1)
-    pyautogui.write('C:\\Users\\futur\\ip_subset.txt')
-    time.sleep(1)
-    pyautogui.press('enter')
-    time.sleep(5)
-    pyautogui.press('enter')
-    time.sleep(90)
-    pyautogui.click(20, 130)
-    time.sleep(1)
-    pyautogui.click(475, 130)
-    time.sleep(1)
-    pyautogui.press('alt')
-    time.sleep(1)
-    pyautogui.press('e')
-    time.sleep(1)
-    pyautogui.press('s')
-    time.sleep(1)
-    pyautogui.rightClick(100, 160)
-    time.sleep(1)
-    pyautogui.press('up')
-    pyautogui.press('up')
-    pyautogui.press('up')
-    pyautogui.press('up')
-    time.sleep(1)
-    pyautogui.press('enter')
-    time.sleep(1)
-    pyautogui.click(100, 160)
-    index = 0
-    while index < 40:
-        pyautogui.press('down')
-        index = index + 1
-    time.sleep(1)
-    pyautogui.click(315, 70)
-    time.sleep(1)
-    proxy_check_routine()
-    bule = proxy_check_routine()
-    while bule == False:
-        pyautogui.press('up')
-        time.sleep(1)
-        pyautogui.click(315, 70)
-        time.sleep(1)
-        proxy_check_routine()
-        bule = proxy_check_routine()
- 
-def proxy_manager():
-    delete_old()    
-    get_proxy()
-    proxy_engage()
+    
+def test_proxy():
+    x = 1
+    proxies = open("C:\\Users\\Aaron\\Desktop\\ip_subset.txt", "r")
+    proxy_info = proxies.readlines()
+    for ip_with_port in proxy_info:
+        command_two = "powershell Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -name ProxyEnable -Value 0"
+        os.system(command_two)
+        #
+        # URL to send the request to
+        print(ip_with_port)
+        ip_without_port = ip_with_port.split(':')[0]
+        print(ip_without_port)
+        request_url = 'https://geolocation-db.com/jsonp/' + ip_without_port
+
+        #Send Request
+        response = requests.get(request_url)
+        result = response.content.decode()
+        #Clean the returned string so it just contains the dictionary data for the IP address
+        result = result.split("(")[1].strip(")")
+        #Convert Data to Dictionary-type Object
+        result  = json.loads(result)
+        print(result)
+        country = result.get("country_code")
+        city = result.get("city")
+        print(country)
+        print(city)
+        #
+        if not country == "USSR":
+            proxy_switch(ip_with_port)
+            proxy_check = proxy_check_routine()
+            if proxy_check == True:
+                print(x)
+                proxies.close()
+                return
+            else:
+                print(x)
+                x = x + 1
+                continue
+        else:
+            print(x)
+            x = x+1
+            continue
  
 def tuxlerconfig():
     #Reset Tuxler Config
@@ -2150,13 +2201,19 @@ def browserclose():
 def proxy_close():
     os.system("TASKKILL /F /IM EPS.exe")
     os.system("powershell set-itemproperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -name ProxyEnable -value 0")
- 
+
+proxy_manager():
+    delete_old()
+    build_recent_proxies()
+    get_proxies()
+    test_proxy()
+
 #Run Program
 generation_selector()
 generation_list = generation_selector()
 social_list = generation_list[0]
 generation_index = generation_list[3]
-if generation_index == 99:
+if generation_index == 4:
     proxy_manager()
 else:
     tuxlerconfig()
@@ -2171,4 +2228,5 @@ adclicking()
 browserclose()
 proxy_close()
 #WindowsRestart
+delete_old()
 os.system("shutdown /r /t 1")

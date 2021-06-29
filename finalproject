@@ -133,21 +133,21 @@ def delete_old():
     command_two = "powershell Set-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings' -name ProxyEnable -Value 0"
     os.system(command_two)
  
-    if os.path.exists('C:\\Users\\Aaron\\Desktop\\recent_proxies.txt'):
-        os.remove('C:\\Users\\Aaron\\Desktop\\recent_proxies.txt')          
-    if os.path.exists('C:\\Users\\Aaron\\Desktop\\test_image.jpg'):
-        os.remove('C:\\Users\\Aaron\\Desktop\\test_image.jpg')
-    if os.path.exists('C:\\Users\\Aaron\\Desktop\\master_ip_download.txt'):
-        os.remove('C:\\Users\\Aaron\\Desktop\\master_ip_download.txt')
-    if os.path.exists('C:\\Users\\Aaron\\Desktop\\ip_subset.txt'):
-        os.remove('C:\\Users\\Aaron\\Desktop\\ip_subset.txt')
+    if os.path.exists('C:\\Users\\futur\\Desktop\\recent_proxies.txt'):
+        os.remove('C:\\Users\\futur\\Desktop\\recent_proxies.txt')          
+    if os.path.exists('C:\\Users\\futur\\Desktop\\test_image.jpg'):
+        os.remove('C:\\Users\\futur\\Desktop\\test_image.jpg')
+    if os.path.exists('C:\\Users\\futur\\Desktop\\master_ip_download.txt'):
+        os.remove('C:\\Users\\futur\\Desktop\\master_ip_download.txt')
+    if os.path.exists('C:\\Users\\futur\\Desktop\\ip_subset.txt'):
+        os.remove('C:\\Users\\futur\\Desktop\\ip_subset.txt')
         
 def build_recent_proxies():
     unsorted_proxy_list = []
     partially_sorted_proxy_list = []
     sorted_proxy_list = []      
 
-    master_proxy_file = open("C:\\Users\\Aaron\Desktop\master_ip_download.txt", "a+")
+    master_proxy_file = open("C:\\Users\\futur\Desktop\master_ip_download.txt", "a+")
 
     request_url = 'https://proxylist.live/dashboard/proxylist?page=0'
     response = requests.get(request_url)
@@ -176,7 +176,7 @@ def build_recent_proxies():
 
     master_proxy_file.close()
 
-    with open('C:\\Users\\Aaron\\Desktop\\master_ip_download.txt') as fh:
+    with open('C:\\Users\\futur\\Desktop\\master_ip_download.txt') as fh:
        fstring = fh.readlines()
  
     pattern = re.compile(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\:\d{1,5})')
@@ -194,7 +194,7 @@ def build_recent_proxies():
         #print(finished_cast_string)
         sorted_proxy_list.append(finished_cast_string)
     
-    sorted_proxies_file = open("C:\\Users\\Aaron\\Desktop\\recent_proxies.txt", "a+")
+    sorted_proxies_file = open("C:\\Users\\futur\\Desktop\\recent_proxies.txt", "a+")
     for element in sorted_proxy_list:
         sorted_proxies_file.write(element + "\n")
     sorted_proxies_file.close()
@@ -203,10 +203,10 @@ def build_recent_proxies():
     print(len(sorted_proxy_list))
     
 def get_proxies():
-    recent_proxies_file = open("C:\\Users\\Aaron\\Desktop\\recent_proxies.txt", "a+")
+    recent_proxies_file = open("C:\\Users\\futur\\Desktop\\recent_proxies.txt", "a+")
     recent_proxies_file.seek(0)
     proxies = recent_proxies_file.readlines()
-    subset_proxy_file = open("C:\\Users\\Aaron\\Desktop\\ip_subset.txt", "a+")
+    subset_proxy_file = open("C:\\Users\\futur\\Desktop\\ip_subset.txt", "a+")
 
     for i in range(1,200):
         recent_proxies_file.seek(0)
@@ -240,7 +240,7 @@ def proxy_check_routine():
     
 def test_proxy():
     x = 1
-    proxies = open("C:\\Users\\Aaron\\Desktop\\ip_subset.txt", "r")
+    proxies = open("C:\\Users\\futur\\Desktop\\ip_subset.txt", "r")
     proxy_info = proxies.readlines()
     for ip_with_port in proxy_info:
         command_two = "powershell Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -name ProxyEnable -Value 0"
@@ -660,8 +660,8 @@ def tuxleraccounts():
               "futureslimitedco@gmail.com", "futureslimitedco@gmail.com", 
               "danmckeex@outlook.com", "danmckeex@outlook.com", 
               "danmckeex@outlook.com", "danmckeex@outlook.com", 
-              "aaronvesey@gmail.com", "aaronvesey@gmail.com", 
-              "aaronvesey@gmail.com", "aaronvesey@gmail.com", 
+              "futurvesey@gmail.com", "futurvesey@gmail.com", 
+              "futurvesey@gmail.com", "futurvesey@gmail.com", 
               "futurescapecontact@gmail.com", "futurescapecontact@gmail.com", 
               "futurescapecontact@gmail.com", "futurescapecontact@gmail.com", 
               "futurescapecontact@gmail.com", "futurescapecontact@gmail.com", 

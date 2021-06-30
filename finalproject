@@ -231,7 +231,7 @@ def proxy_check_routine():
  
     try: 
         url = 'https://prayerservicesforyou.xyz/wp-content/uploads/2021/06/prayerserviceforyou.jpg'
-        request = requests.get(url, allow_redirects=True, timeout=4)
+        request = requests.get(url, allow_redirects=True, timeout=2)
         open('test_image.jpg', 'wb').write(request.content)
         request.close()
         print('Attempt successful.')

@@ -241,14 +241,20 @@ def proxy_check_routine():
         return False
     
 def test_proxy():
+    routine_start_time = time.time()
+    routine_end_time = routine_start_time + 180
+    
     x = 1
     proxies = open("C:\\Users\\futur\\Desktop\\ip_subset.txt", "r")
     proxy_info = proxies.readlines()
     for ip_with_port in proxy_info:
         command_two = "powershell Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -name ProxyEnable -Value 0"
         os.system(command_two)
-        #
-        # URL to send the request to
+        
+        if time.time() > routine_end_time:
+            os.system("shutdown /r /t 1")
+        
+        #URL to send the request to
         print(ip_with_port)
         ip_without_port = ip_with_port.split(':')[0]
         print(ip_without_port)

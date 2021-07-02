@@ -22,7 +22,7 @@ def generation_selector():
                         ["ethicsoflaw.xyz", "constitutionallawscholar.xyz"], 
                         ["buyahouse.xyz", "insuranceninjas.xyz"],
                         ["realestateinsurance.xyz", "mastersofrealestate.xyz"],
-                        ["newlifeinchrist.xyz", "christiantheodicy.xyz"]]
+                        ["insuranceforall.xyz", "lawyerforyou.xyz"]]
  
     social_entrance_one = ["https://lawphilosophy.livejournal.com/375.html", 
                            "https://stevecollins-17870.medium.com/about", 
@@ -42,17 +42,17 @@ def generation_selector():
                            "https://lawandsociety1.blogspot.com/2021/06/gamma-generation_28.html", 
                            "https://buyahouse1.quora.com/"]
     
-    social_entrance_four = ["https://realestatestudi.livejournal.com/497.html", 
-                           "https://newlifeinchrist-xyz.medium.com/about", 
-                           "https://twitter.com/lawandsociety3", 
-                           "https://lawandsociety1.blogspot.com/2021/06/zero-generation.html", 
-                           "https://newlifeinchrist.quora.com/"]
-                           
-    social_entrance_five = ["https://masterealestate.livejournal.com/446.html", 
+    social_entrance_four = ["https://masterealestate.livejournal.com/446.html", 
                            "https://gracepotter-46051.medium.com/about", 
                            "https://twitter.com/RelEstateMaster", 
                            "https://lawandsociety1.blogspot.com/2021/06/delta-generation_28.html", 
                            "https://realestateinsurance.quora.com/"]
+                           
+    social_entrance_five = ["https://cynthiabrandon6.livejournal.com/296.html", 
+                           "https://medium.com/@cynthiabrandon/about", 
+                           "https://twitter.com/lawandsociety3", 
+                           "https://lawandsociety1.blogspot.com/2021/07/fifth-generation.html", 
+                           "https://insuranceforall.quora.com/"]
  
     social_build = [social_entrance_one, 
                     social_entrance_two, 
@@ -66,7 +66,7 @@ def generation_selector():
     site_two = target_generation[1]
  
     return [social_build[generation_index], site_one, site_two, generation_index]
- 
+
 def browsercleanup():
     time.sleep(5)
     pyautogui.click(100, 15)
